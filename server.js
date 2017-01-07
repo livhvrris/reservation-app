@@ -17,21 +17,20 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Star Wars Characters (DATA)
 // =============================================================
-var tables = [];
-var waitList = [{
-  name: "Yoda",
-  phone: 123445345,
-  email: "fdlgksd@gmail.com",
-  id: "YodaY"
-  // }
-  // {
-  // name: "Mary",
-  // phone: 123345,
-  // email: "fdld@gmail.com",
-  // id: "MaryM"
+var tables = [{
+  customerName: "Yoda",
+  customerNumber: 123445345,
+  customerEmail: "fdlgksd@gmail.com",
+  customerID: "YodaY"
+  },
+  {
+  customerName: "Mary",
+  customerNumber: 123345,
+  customerEmail: "fdld@gmail.com",
+  customerID: "MaryM"
   }
-  ];
-
+];
+var waitList = [];
 // Routes
 // =============================================================
 
@@ -55,50 +54,28 @@ app.get("/reserve", function(req, res) {
   // res.sendFile(path.join(__dirname, "add.html"));
 });
 
-// app.post("/api/new", function(req, res) {
-//   var newguest = req.body;
+app.post("/api/tables", function(req, res) {
+  var newguest = req.body;
+console.log(req.body);
+if (tables.length<5) {
+  console.log("Five reservations");
+  tables.push(newguest);
+}
+else {waitList.push(newguest)};
 
-//   console.log(newcharacter);
+  res.json(newguest);
 
-//   characters.push(newcharacter);
+});
 
-//   res.json(newcharacter);
-// });
+console.log(waitList);
 
+ app.get("/api/tables", function (req, res) {
+  res.json(tables);
+ });
 
-
-// // Search for Specific Character (or all characters) - provides JSON
-// app.get("/api/:characters?", function(req, res) {
-//   var chosen = req.params.characters;
-
-//   if (chosen) {
-//     console.log(chosen);
-
-//     for (var i = 0; i < characters.length; i++) {
-//       if (chosen === characters[i].routeName) {
-//         res.json(characters[i]);
-//         return;
-//       }
-//     }
-
-//     res.json(false);
-//   }
-//   else {
-//     res.json(characters);
-//   }
-// });
-
-// // Create New Characters - takes in JSON input
-// app.post("/api/new", function(req, res) {
-//   var newcharacter = req.body;
-//   newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
-
-//   console.log(newcharacter);
-
-//   characters.push(newcharacter);
-
-//   res.json(newcharacter);
-// });
+  app.get("/api/waitList", function (req, res) {
+  res.json(waitList);
+ });
 
 // Starts the server to begin listening
 // =============================================================
