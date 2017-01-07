@@ -72,6 +72,7 @@
 		$.ajax({url: currentURL + "/api/tables", method: "GET"})
 			.done(function(tableData) {
 
+<<<<<<< HEAD
 				console.log("------------------------------------");
 				console.log("URL: " + currentURL + "/api/tables");
 				console.log("------------------------------------");
@@ -79,6 +80,10 @@
 				console.log(tableData);
 				console.log("------------------------------------")
 
+=======
+			
+				// Loop through and display each of the customers
+>>>>>>> 66407f091c9b294ce2887950498046af40c95597
 				for (var i=0; i<tableData.length; i++){
 
 					var tableSection = $("<div>");
@@ -100,6 +105,7 @@
 		$.ajax({url: currentURL + "/api/waitlist", method: "GET"})
 			.done(function(waitlistData) {
 
+<<<<<<< HEAD
 
 				console.log("------------------------------------");
 				console.log("URL: " + currentURL + "/api/waitlist");
@@ -108,6 +114,10 @@
 				console.log(waitlistData);
 				console.log("------------------------------------")
 
+=======
+				
+				// Loop through and display each of the customers
+>>>>>>> 66407f091c9b294ce2887950498046af40c95597
 				for (var i=0; i<waitlistData.length; i++){
 
 					var waitlistSection = $("<div>");
