@@ -80,15 +80,7 @@
 		$.ajax({url: currentURL + "/api/tables", method: "GET"})
 			.done(function(tableData) {
 
-				// Here we are logging the URL so we have access to it for troubleshooting
-				console.log("------------------------------------");
-				console.log("URL: " + currentURL + "/api/tables");
-				console.log("------------------------------------");
-
-				// Here we then log the NYTData to console, where it will show up as an object.
-				console.log(tableData);
-				console.log("------------------------------------")
-
+			
 				// Loop through and display each of the customers
 				for (var i=0; i<tableData.length; i++){
 
@@ -117,15 +109,7 @@
 		$.ajax({url: currentURL + "/api/waitlist", method: "GET"})
 			.done(function(waitlistData) {
 
-				// Here we are logging the URL so we have access to it for troubleshooting
-				console.log("------------------------------------");
-				console.log("URL: " + currentURL + "/api/waitlist");
-				console.log("------------------------------------");
-
-				// Here we then log the NYTData to console, where it will show up as an object.
-				console.log(waitlistData);
-				console.log("------------------------------------")
-
+				
 				// Loop through and display each of the customers
 				for (var i=0; i<waitlistData.length; i++){
 
