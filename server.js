@@ -22,8 +22,15 @@ var waitList = [{
   name: "Yoda",
   phone: 123445345,
   email: "fdlgksd@gmail.com",
-  id: "Yoda"
-}];
+  id: "YodaY"
+  // }
+  // {
+  // name: "Mary",
+  // phone: 123345,
+  // email: "fdld@gmail.com",
+  // id: "MaryM"
+  }
+  ];
 
 // Routes
 // =============================================================
@@ -45,6 +52,16 @@ app.get("/reserve", function(req, res) {
   res.send("Welcome to the reserve Page!");
   // res.sendFile(path.join(__dirname, "add.html"));
 });
+
+// app.post("/api/new", function(req, res) {
+//   var newguest = req.body;
+
+//   console.log(newcharacter);
+
+//   characters.push(newcharacter);
+
+//   res.json(newcharacter);
+// });
 
 
 
