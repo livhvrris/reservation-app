@@ -30,19 +30,21 @@ var waitList = [{
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.send("Welcome to the Restarant home Page!");
+  res.sendFile(path.join(__dirname, "home.html"));
+  // res.send("Welcome to the Restarant home Page!");
   // res.sendFile(path.join(__dirname, "home.html"));
 });
 
 app.get("/tables", function(req, res) {
-  // res.send("Welcome to the tables Page!");
-  console.log(waitList);
-  res.json(waitList);
+  res.sendFile(path.join(__dirname, "tables.html"));
+  // console.log(waitList);
+  // res.json(waitList);
   // res.sendFile(path.join(__dirname, "add.html"));
 });
 
 app.get("/reserve", function(req, res) {
-  res.send("Welcome to the reserve Page!");
+  res.sendFile(path.join(__dirname, "reserve.html"));
+  // res.send("Welcome to the reserve Page!");
   // res.sendFile(path.join(__dirname, "add.html"));
 });
 
